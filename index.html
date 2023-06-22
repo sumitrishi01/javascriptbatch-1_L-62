@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavascriptBatch-1_62_FAN</title>
+        <style>
+            .fanbox{
+                width:500px;
+                height:380px;                
+                background-image:url(img/fan12.png);
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 50px auto;
+                animation-name: fan;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;  
+                animation-play-state: paused;              
+            }
+            @keyframes fan {
+                0%{
+                    transform: rotateZ(0deg);
+                }
+                100%{
+                    transform: rotateZ(359deg);
+                }
+            }
+            .buttongroup > button:first-child{
+                border:none;            
+                width:40px;
+                height: 40px;                
+                /* padding: 20px/ 20px;                 */
+                /* background-position: 0px -30px; */
+                background-size: cover;
+                background-image: url("img/power11.png");
+                background-repeat: no-repeat;
+            }
+            .buttongroup > button:nth-child(2){
+                border:none;            
+                width:40px;
+                height: 40px;
+                border-radius: 5px;
+                margin: 0px 10px;
+            }
+            .buttongroup > button:nth-child(3){
+                border:none;            
+                width:40px;
+                height: 40px;
+                border-radius: 5px;
+                margin: 0px 10px;
+            }
+            .buttongroup > button:last-child{
+                border:none;            
+                width:40px;
+                height: 40px;
+                border-radius: 5px;
+                margin: 0px 10px;
+            }
+        </style>
+        <script>
+            //function defination is one time process
+            let stopFan=()=>{ //formal argument/parameter
+                //function body
+                alert('hello')
+
+                //function may return something.
+            }
+            function x(elem){
+                return document.querySelector(elem)
+            }
+
+            //function defination is one time process
+            let startFan=(speed)=>{ //formal argument/parameter
+                if(speed == 0){
+                    // alert("1");
+                    x("[data-sumit='fan2']").style.animationPlayState='paused';
+                }
+                else if(speed == 1){
+                    // alert("2");
+                    x("[data-sumit='fan2']").style.animationPlayState='running';
+                    x("[data-sumit='fan2']").style.animationDuration='0.5s';
+                }
+                else if(speed == 2){
+                    // alert("2");
+                    x("[data-sumit='fan2']").style.animationPlayState='running';
+                    x("[data-sumit='fan2']").style.animationDuration='0.1s';
+                }
+                else{
+                    // alert("3");
+                    document.getElementById('fan3').style.animationDuration='0.01s';
+                    document.getElementById('fan3').style.animationPlayState='running';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="fanbox" id="fan3" data-sumit="fan2">
+        </div>
+
+        <div style="text-align:center;margin-top:50px;" class="buttongroup">
+            <button onclick="startFan(0)"></button>
+            <button onclick="startFan(1)">1</button>
+            <button onclick="startFan(2)">2</button>
+            <button onclick="startFan(3)">3</button>
+        </div>
+
+        <script>
+
+        </script>
+    </body>
+</html>
